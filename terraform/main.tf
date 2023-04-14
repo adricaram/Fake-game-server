@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = "~/.kube/config"  
 }
 
 resource "kubernetes_deployment" "server" {
@@ -29,7 +29,8 @@ resource "kubernetes_deployment" "server" {
           image = "jackypaul06/server:latest"
 
           port {
-            container_port = 12345
+            container_port = 7778
+            protocol       = "UDP"
           }
         }
       }
@@ -50,8 +51,9 @@ resource "kubernetes_service" "server" {
     type = "NodePort"
 
     port {
-      port        = 12345
-      target_port = 12345
+      protocol    = "UDP" 
+      port        = 7778
+      target_port = 7778
     }
   }
 }

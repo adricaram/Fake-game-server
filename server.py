@@ -1,18 +1,19 @@
 import socket
 
 def main():
-    host = '0.0.0.0'
-    port = 12345        
+    host = '0.0.0.0'  # Listen on all available network interfaces
+    port = 7778        # Listen on port 7778
 
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # Create a socket object using UDP (SOCK_DGRAM)
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    # Bind the socket to the host and port
     server_socket.bind((host, port))
-    server_socket.listen(1)
     print(f"Server is listening on {host}:{port}")
-    connection, address = server_socket.accept()
-    print(f"Connected to {address}")
-    data = connection.recv(1024).decode()
-    print(f"Received data: {data}")
-    connection.close()
+
+    # Receive data from the client
+    data, address = server_socket.recvfrom(1024)
+    print(f"Received data: {data.decode()} from {address}")
 
 if __name__ == "__main__":
     main()
