@@ -6,3 +6,5 @@ The game server will be represented as a server.py script that listens on UDP po
 
 It prints everything it receives to standard output, and runs for 10 minutes exactly.
 The server.py script is containerized and deployed to a local minikube using Terraform.
+
+## Architecture
