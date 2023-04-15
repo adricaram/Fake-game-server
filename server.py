@@ -1,19 +1,25 @@
 import socket
+import time
 
-def main():
-    host = '0.0.0.0'  # Listen on all available network interfaces
-    port = 7778        # Listen on port 7778
+SERVER_IP = "0.0.0.0"
+SERVER_PORT = 7778
 
-    # Create a socket object using UDP (SOCK_DGRAM)
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server.bind((SERVER_IP, SERVER_PORT))
 
-    # Bind the socket to the host and port
-    server_socket.bind((host, port))
-    print(f"Server is listening on {host}:{port}")
+start_time = time.time()
+max_duration = 600  # 10 minutes in seconds
 
-    # Receive data from the client
-    data, address = server_socket.recvfrom(1024)
-    print(f"Received data: {data.decode()} from {address}")
+while time.time() - start_time < max_duration:
+    data, addr = server.recvfrom(4096)
+    print("Client message:", data.decode())
 
-if __name__ == "__main__":
-    main()
+    # Calculate and print time left
+    time_left = max_duration - (time.time() - start_time)
+    print(f"Time left: {time_left:.2f} seconds")
+
+    # Ping back the client for testing the connection
+    response = "hello from the server!"
+    server.sendto(response.encode(), addr)
+
+server.close()

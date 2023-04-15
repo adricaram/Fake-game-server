@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "~/.kube/config"  
+  config_path = "~/.kube/config"
 }
 
 resource "kubernetes_deployment" "server" {
@@ -28,6 +28,12 @@ resource "kubernetes_deployment" "server" {
           name  = "server"
           image = "jackypaul06/server:latest"
 
+          # Add the PYTHONUNBUFFERED environment variable
+          env {
+            name  = "PYTHONUNBUFFERED"
+            value = "1"
+          }
+
           port {
             container_port = 7778
             protocol       = "UDP"
@@ -48,12 +54,13 @@ resource "kubernetes_service" "server" {
       app = "server"
     }
 
-    type = "NodePort"
+    type = "LoadBalancer"
 
     port {
-      protocol    = "UDP" 
+      protocol    = "UDP"
       port        = 7778
       target_port = 7778
     }
   }
 }
+
