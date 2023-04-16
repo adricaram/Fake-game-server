@@ -24,7 +24,7 @@ Before you begin, make sure you have the following software installed on your lo
 
 ### Step 1 : Clone the project
 ```sh
-git clone blabablable
+gut clone git@github.com:adricaram/Fake-game-server.git
 ```
 
 ### Step 2 : Containerize the server
