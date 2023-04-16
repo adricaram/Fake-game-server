@@ -8,6 +8,10 @@ It prints everything it receives to standard output, and runs for 10 minutes exa
 
 The server.py script is containerized and deployed to a local minikube using Terraform.
 
+This Readme describe how to set up the server and how to test it.
+
+For a complete documentation, go to /doc folder.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following software installed on your local machine:
