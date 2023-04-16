@@ -1,8 +1,9 @@
+import os
 import socket
 import time
 
-SERVER_IP = "0.0.0.0"
-SERVER_PORT = 7778
+SERVER_IP = os.getenv("SERVER_IP", "0.0.0.0")  # If the environment variable is not set, use 0.0.0.0
+SERVER_PORT = int(os.getenv("SERVER_PORT", 7778))  # If the environment variable is not set, use
 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind((SERVER_IP, SERVER_PORT))

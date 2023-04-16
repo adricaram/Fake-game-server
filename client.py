@@ -1,7 +1,7 @@
 import socket
 
 def main():
-    host = '10.97.211.156'  # Localhost IP to test in local : External IP to test the server in the cluster
+    host = '10.105.59.70'  # Localhost IP to test in local : External IP to test the server in the cluster
     port = 7778          # Port 
 
     # Create a socket object using UDP (SOCK_DGRAM)

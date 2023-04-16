@@ -2,9 +2,28 @@ provider "kubernetes" {
   config_path = "~/.kube/config"
 }
 
+resource "kubernetes_namespace" "game" {
+  metadata {
+    name = "game"
+  }
+}
+
+resource "kubernetes_config_map" "server-config" {
+  metadata {
+    name      = "server-config"
+    namespace = kubernetes_namespace.game.metadata.0.name
+  }
+
+  data = {
+    SERVER_IP   = "0.0.0.0"
+    SERVER_PORT = "7778"
+  }
+}
+
 resource "kubernetes_deployment" "server" {
   metadata {
-    name = "server"
+    name      = "server"
+    namespace = kubernetes_namespace.game.metadata.0.name
   }
 
   spec {
@@ -28,10 +47,29 @@ resource "kubernetes_deployment" "server" {
           name  = "server"
           image = "jackypaul06/server:latest"
 
-          # Add the PYTHONUNBUFFERED environment variable
           env {
             name  = "PYTHONUNBUFFERED"
             value = "1"
+          }
+
+          env {
+            name = "SERVER_IP"
+            value_from {
+              config_map_key_ref {
+                name = kubernetes_config_map.server-config.metadata.0.name
+                key  = "SERVER_IP"
+              }
+            }
+          }
+
+          env {
+            name = "SERVER_PORT"
+            value_from {
+              config_map_key_ref {
+                name = kubernetes_config_map.server-config.metadata.0.name
+                key  = "SERVER_PORT"
+              }
+            }
           }
 
           port {
@@ -46,7 +84,8 @@ resource "kubernetes_deployment" "server" {
 
 resource "kubernetes_service" "server" {
   metadata {
-    name = "server"
+    name      = "server"
+    namespace = kubernetes_namespace.game.metadata.0.name
   }
 
   spec {
@@ -63,4 +102,3 @@ resource "kubernetes_service" "server" {
     }
   }
 }
-
