@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" modified="2023-04-16T14:32:45.481Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="cysyUcvO2gnp99O3g7Nr" version="21.1.8" type="github">
+  <diagram name="Page-1" id="XwSM25eIwwIob0-cmQhr">
+    <mxGraphModel dx="1434" dy="739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="XH3o7rBK7vUncx0Et5vO-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="145" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XH3o7rBK7vUncx0Et5vO-6" target="XH3o7rBK7vUncx0Et5vO-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-6" value="&lt;b&gt;Internet&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="115" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XH3o7rBK7vUncx0Et5vO-8" target="XH3o7rBK7vUncx0Et5vO-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-8" value="&lt;b&gt;minikube tunnel&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="255" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-10" value="&lt;b&gt;Minikube Cluster &lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="182.5" y="410" width="345" height="445" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-12" value="&lt;b&gt;CLIENT&lt;/b&gt;&lt;br&gt;client.py" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="115" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-13" value="Namespace:&lt;br&gt;game" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="295" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-14" value="Service:&lt;br&gt;server&lt;br&gt;type : loadbalancer&lt;br&gt;&lt;font color=&quot;#ff6666&quot;&gt;External ip : 10.24.15.41&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="282" y="530" width="146" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-15" value="Deployment:&lt;br&gt;server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="294" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XH3o7rBK7vUncx0Et5vO-16" value="ConfigMap&lt;br&gt;server-config" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="294" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
