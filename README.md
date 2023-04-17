@@ -49,7 +49,7 @@ git clone git@github.com:adricaram/Fake-game-server.git
     ```sh
     minikube start --driver=hyperv
     ```
-2. Initialize and apply Terraform configuration
+2. Initialize and apply Terraform configuration,
    go to the terraform folder then :
     ```sh
     terraform init
