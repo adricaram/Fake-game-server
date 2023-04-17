@@ -141,11 +141,11 @@ To test the server and client on your local machine, you'll need to run them in 
     ```sh
     kubectl get pods
     ```
-2. Copy the udp_client.py script into the server pod (replace <server_pod_name> with the actual pod name from the previous command):
+2. Copy the client.py script into the server pod :
     ```sh
     kubectl cp client.py <server_pod_name>:/app/client.py
     ```
-3. Run the client inside the server pod (replace <server_pod_name> with the actual pod name):
+3. Run the client inside the server pod :
     ```sh
     kubectl exec -it <server_pod_name> -- python client.py
     ```
