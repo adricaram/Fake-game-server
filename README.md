@@ -60,7 +60,8 @@ git clone git@github.com:adricaram/Fake-game-server.git
     ```sh
     minikube tunnel
     ```
-    It will creates a network route between your host system and the Kubernetes cluster
+    It will creates a network route between your host system and the Kubernetes cluster.
+    
     Once the tunnel is running, you will be able to access the services exposed by the LoadBalancer from your host machine using the IP addresses assigned to them within the Minikube cluster.
 
 4. Check the cluster
@@ -70,11 +71,12 @@ git clone git@github.com:adricaram/Fake-game-server.git
     ```
     you should see your runing pods, services and deployment
     check that everything is running without error.
+    
     Verify that you server service have an External IP and take note of this ip we will need it to test our server.
 
 
 ## Testing
-As mentionned before, we have client in python who send message by UDP to the server when we execute it.
+As mentionned before, we have a client in python who send message by UDP to the server when we execute it.
 
 You can test the server in 3 differents way :
 1. Local testing (running both server and client on the host machine outside the cluster)
@@ -152,7 +154,7 @@ To test the server and client on your local machine, you'll need to run them in 
     kubectl get pods <server_pod_name> -o jsonpath='{.status.podIP}'
     ```
 
-This readme has been created to guide you through the installation and testing of the game server.
+This readme has been created to guide you through the installation of the game server.
 
 
-You can find a complete documentation (inside the documentation folder) containing the code details, the choice of architecture, the impact of these choices in production, the issues i faced,  what could be added ...etc
+You can find a complete documentation (inside the documentation folder) containing the code details, the choice of architecture, the impact of these choices in production, the issues I faced,  what could be added ...etc
