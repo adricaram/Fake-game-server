@@ -21,7 +21,6 @@ Before you begin, make sure you have the following software installed on your lo
 3. **Minikube**: [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
 4. **kubectl**: [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 5. **Terraform**: [https://learn.hashicorp.com/tutorials/terraform/install-cli](https://learn.hashicorp.com/tutorials/terraform/install-cli)
-6. **Helm** (Optional, for installing the Nginx Ingress controller): [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 
 
 ## Installation
